@@ -1,9 +1,21 @@
 # Hyperproof Take-Home Assessment
 
-## 
+## Manual retrieve key:
+You can retrieve (or create) any key manually using GitHub manual action: `Manual Retrieve key`.  
+Incoming params:
+ - Key name for retrieve
+ - Targets for key restriction 
+ - IPs for key restriction
+
+![manual-retrieve](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve.png)
+Result:
+![manual-retrieve-execution](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve-execution.png)
+
+## Schedule retrieve key:
+
 
 ## Client
-The project sources is a GoLang client which work with Cloud Platforms (GCP / Azure).
+The project sources is a GoLang client which work with Cloud Platforms (GCP / Azure).  
 It's a cli-app based on [urfave](github.com/urfave/cli/v2) and use for executing platform actions.
 
 ### Usage
@@ -27,6 +39,8 @@ process:
 ![retrieve-process](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/retrieve-process.png)
 result:
 ![retrieve-process](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/retrieve-gcp.png)
+![azure-vault-secrets](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/azure-vault-secrets.png)
+![azure-vault-secrets-versions](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/azure-vault-secrets-versions.png)
 
 ### Add new commands
 Commands provided in `./commands` directory.
