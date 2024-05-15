@@ -7,8 +7,8 @@ Incoming params:
  - Targets for key restriction 
  - IPs for key restriction
 
-![manual-retrieve](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve.png)
-Result:
+![manual-retrieve](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve.png)  
+Schedule execution:  
 ![manual-retrieve-execution](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve-execution.png)
 
 ## Schedule retrieve key:
