@@ -1,6 +1,17 @@
-name: Exec hyperproof retrieve
+name: Internal-Exec hyperproof retrieve
 
-on: [workflow_call]
+on:
+  workflow_call:
+    inputs:
+      ip:
+        required: true
+        type: string
+      targets:
+        required: true
+        type: string
+      key:
+        required: true
+        type: string
 
 jobs:
   common:
@@ -25,7 +36,4 @@ jobs:
           HYPERPROOF_GCP_PROJECT_ID:      ${{ secrets.HYPERPROOF_GCP_PROJECT_ID }}
         run: |
           ./hyperproof retrieve \
-            --gcp-key-ips ${{ inputs.ip }} \
-            --gcp-key-targets ${{ inputs.targets }} \
-            --key-name ${{ inputs.key }} \
-            --gcp-service-account /tmp/gcp-service-account.json
+            --gcp-key-ips ${{ 
