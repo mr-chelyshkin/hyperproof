@@ -1,39 +1,18 @@
 package google
 
-import (
-	"google.golang.org/api/apikeys/v2"
-)
+import "google.golang.org/api/apikeys/v2"
 
-// ApikeysOpt is a common opts for initialize GCP client.
-type ApikeysOpt func(ApiKeys)
+// GcpOpt is a common opts for initialize GCP client.
+type GcpOpt func(Google)
 
-// WithApikeysURL modify GCP API URL.
-func WithApikeysURL(url string) ApikeysOpt {
-	return func(keys ApiKeys) {
-		keys.setApiUrl(url)
-	}
-}
+// ApiKeysCreateOpt is a common opts which extends apikeys.V2Key for sending apikeys Create request.
+type ApiKeysCreateOpt func(*apiKeysCreateParams)
 
-// WithApikeysWatchDogInSec change response waiter timeout.
-func WithApikeysWatchDogInSec(duration int) ApikeysOpt {
-	return func(keys ApiKeys) {
-		keys.setWatchdog(duration)
-	}
-}
-
-// WithApikeysLocationType change location type for apikeys.
-func WithApikeysLocationType(keyType ApikeyLocationType) ApikeysOpt {
-	return func(keys ApiKeys) {
-		keys.setLocationType(keyType)
-	}
-}
-
-// ApikeysCreateOpt is a common opts which extends apikeys.V2Key.
-type ApikeysCreateOpt func(*apikeysCreateParams)
-
-// WithApikeysTargetsRestrictions additional service api restrictions.
-func WithApikeysTargetsRestrictions(targets []string) ApikeysCreateOpt {
-	return func(p *apikeysCreateParams) {
+// WithApiKeysCreateTargetsRestrictions additional service api restrictions.
+//
+//	default: no limits
+func WithApiKeysCreateTargetsRestrictions(targets []string) ApiKeysCreateOpt {
+	return func(p *apiKeysCreateParams) {
 		var lst []*apikeys.V2ApiTarget
 		for _, target := range targets {
 			lst = append(lst, &apikeys.V2ApiTarget{Service: target})
@@ -42,18 +21,22 @@ func WithApikeysTargetsRestrictions(targets []string) ApikeysCreateOpt {
 	}
 }
 
-// WithApikeysSiteRestrictions additional sites restrictions.
-func WithApikeysSiteRestrictions(websites []string) ApikeysCreateOpt {
-	return func(p *apikeysCreateParams) {
+// WithApiKeysCreateSiteRestrictions additional sites restrictions.
+//
+// default: no limits
+func WithApiKeysCreateSiteRestrictions(websites []string) ApiKeysCreateOpt {
+	return func(p *apiKeysCreateParams) {
 		p.params.Restrictions.BrowserKeyRestrictions = &apikeys.V2BrowserKeyRestrictions{
 			AllowedReferrers: websites,
 		}
 	}
 }
 
-// WithApikeysIPRestrictions additional IPs restriction.
-func WithApikeysIPRestrictions(ips []string) ApikeysCreateOpt {
-	return func(p *apikeysCreateParams) {
+// WithApiKeysCreateIPRestrictions additional IPs restriction.
+//
+// default: no limits
+func WithApiKeysCreateIPRestrictions(ips []string) ApiKeysCreateOpt {
+	return func(p *apiKeysCreateParams) {
 		p.params.Restrictions = &apikeys.V2Restrictions{
 			ServerKeyRestrictions: &apikeys.V2ServerKeyRestrictions{
 				AllowedIps: ips,

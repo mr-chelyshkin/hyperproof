@@ -6,24 +6,22 @@ import (
 	"google.golang.org/api/apikeys/v2"
 )
 
-type apikeysCreateParams struct {
+// wrapper for additional opts for extend options in ApiKeys Create request.
+type apiKeysCreateParams struct {
 	params *apikeys.V2Key
 }
 
-type apikeysLocationPath struct {
+// wrapper for additional opts for change GCP default ApiKeys path for request.
+type apiKeysLocationPath struct {
 	keyType ApikeyLocationType
 }
 
-func newApikeysLocationPath(keyType ApikeyLocationType) apikeysLocationPath {
-	return apikeysLocationPath{
+func newApikeysLocationPath(keyType ApikeyLocationType) apiKeysLocationPath {
+	return apiKeysLocationPath{
 		keyType: keyType,
 	}
 }
 
-func (a *apikeysLocationPath) setType(keyType ApikeyLocationType) {
-	a.keyType = keyType
-}
-
-func (a *apikeysLocationPath) path(projectID string) string {
+func (a *apiKeysLocationPath) path(projectID string) string {
 	return fmt.Sprintf("projects/%s/locations/%s", projectID, a.keyType)
 }

@@ -6,7 +6,7 @@ import (
 
 const (
 	Name    = "hyperproof"
-	Usage   = "hyperproof description"
+	Usage   = "hyperproof platform client"
 	EnvName = "HYPERPROOF"
 )
 
