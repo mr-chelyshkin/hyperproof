@@ -36,15 +36,15 @@ Build path: `./build`
 # StaticChecks and Unittests
 Any feature addition should be done in separate branches, where the branch name should reflect the general meaning of the feature. 
 For each commit to a feature branch, a workflow with general checks is triggered.
-[checks-workflow](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/check.png)
+![checks-workflow](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/checks.png)
 
 # Deploy
 Deployment is done in a separate workflow, which is triggered after a new tag is published. The deployment process creates a new release, 
 builds the client for different platforms, and publishes the artifacts in the release.
-[deploy-workflow](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/deploy.png)
+![deploy-workflow](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/deploy.png)
 
 After finishing deployment process new release will be available:
-[release](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/release.png)
+![release](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/release.png)
 
 For creating new tag:
 ```bash
