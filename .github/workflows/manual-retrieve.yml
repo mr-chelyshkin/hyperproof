@@ -27,3 +27,10 @@ jobs:
       ip: ${{ inputs.ip }}
       targets: ${{ inputs.targets }}
       key: ${{ inputs.key }}
+    secrets:
+      HYPERPROOF_GCP_SERVICE_ACCOUNT: ${{ secrets.HYPERPROOF_GCP_SERVICE_ACCOUNT }}
+      HYPERPROOF_AZURE_CLIENT_ID: ${{ secrets.HYPERPROOF_AZURE_CLIENT_ID }}
+      HYPERPROOF_AZURE_CLIENT_SECRET: ${{ secrets.HYPERPROOF_AZURE_CLIENT_SECRET }}
+      HYPERPROOF_AZURE_TENANT_ID: ${{ secrets.HYPERPROOF_AZURE_TENANT_ID }}
+      HYPERPROOF_AZURE_VAULT_NAME: ${{ secrets.HYPERPROOF_AZURE_VAULT_NAME }}
+      HYPERPROOF_GCP_PROJECT_ID: ${{ secrets.HYPERPROOF_GCP_PROJECT_ID }}
