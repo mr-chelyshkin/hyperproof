@@ -32,7 +32,7 @@ jobs:
         env:
           HYPERPROOF_GCP_SERVICE_ACCOUNT: ${{ secrets.HYPERPROOF_GCP_SERVICE_ACCOUNT }}
         run: |
-          mkdir -p /tmp/gcp-service-account.json
+          touch /tmp/gcp-service-account.json
           echo "$HYPERPROOF_GCP_SERVICE_ACCOUNT" > /tmp/gcp-service-account.json
       - name: Execute Hyperproof binary
         env:
