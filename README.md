@@ -13,11 +13,12 @@ Result:
 
 ## Schedule retrieve key:
 Every 6 hours workflow: `retrieve GoogleMapKey` retrieves a predefined key "GoogleMapKey".  
-[retrieve-pipeline](https://github.com/mr-chelyshkin/hyperproof/blob/main/.workflows/schedule-retrieve-GoogleMapKey.yml)
-
+[retrieve-pipeline](https://github.com/mr-chelyshkin/hyperproof/blob/main/.github/.workflows/schedule-retrieve-GoogleMapKey.yml)
+Workflow:
+![schedule-flow](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/schedule-flow.png)
 ## Client
 The project sources is a GoLang client which work with Cloud Platforms (GCP / Azure).  
-It's a cli-app based on [urfave](github.com/urfave/cli/v2) and use for executing platform actions.
+It's a cli-app based on [urfave](https://github.com/urfave/cli) and use for executing platform actions.
 
 ### Usage
 ```bash
