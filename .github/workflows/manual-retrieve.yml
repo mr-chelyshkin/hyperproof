@@ -22,7 +22,7 @@ on:
 
 jobs:
   retrieve:
-    uses: ./.github/workflows/internal/exec-hyperproof-retrieve.yml
+    uses: ./.github/workflows/exec-hyperproof-retrieve.yml
     with:
       ip: ${{ inputs.ip }}
       targets: ${{ inputs.targets }}

@@ -7,7 +7,7 @@ on:
 
 jobs:
   retrieve:
-    uses: ./.github/workflows/internal/exec-hyperproof-retrieve.yml
+    uses: ./.github/workflows/exec-hyperproof-retrieve.yml
     with:
       ip: "127.0.0.1"
       targets: "maps.google.com"
