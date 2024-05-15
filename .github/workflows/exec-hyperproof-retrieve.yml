@@ -12,6 +12,19 @@ on:
       key:
         required: true
         type: string
+    secrets:
+      HYPERPROOF_GCP_SERVICE_ACCOUNT:
+        required: true
+      HYPERPROOF_AZURE_CLIENT_ID:
+        required: true
+      HYPERPROOF_AZURE_CLIENT_SECRET:
+        required: true
+      HYPERPROOF_AZURE_TENANT_ID:
+        required: true
+      HYPERPROOF_AZURE_VAULT_NAME:
+        required: true
+      HYPERPROOF_GCP_PROJECT_ID:
+        required: true
 
 jobs:
   common:
