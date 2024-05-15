@@ -1,4 +1,4 @@
-name: Scheduler retrieve
+name: Schedule Retrieve key
 
 on:
   schedule:
