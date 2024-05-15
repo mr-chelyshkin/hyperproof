@@ -8,7 +8,7 @@ Incoming params:
  - IPs for key restriction
 
 ![manual-retrieve](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve.png)  
-Schedule execution:  
+Execution:  
 ![manual-retrieve-execution](https://github.com/mr-chelyshkin/hyperproof/blob/main/.img/manual-retrieve-execution.png)
 
 ## Schedule retrieve key:
