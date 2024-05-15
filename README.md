@@ -13,7 +13,7 @@ Result:
 
 ## Schedule retrieve key:
 Every 6 hours workflow: `retrieve GoogleMapKey` retrieves a predefined key "GoogleMapKey".  
-![retrieve-pipeline](https://github.com/mr-chelyshkin/hyperproof/blob/main/.workflows/schedule-retrieve-GoogleMapKey.yml)
+[retrieve-pipeline](https://github.com/mr-chelyshkin/hyperproof/blob/main/.workflows/schedule-retrieve-GoogleMapKey.yml)
 
 ## Client
 The project sources is a GoLang client which work with Cloud Platforms (GCP / Azure).  
