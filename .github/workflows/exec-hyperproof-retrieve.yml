@@ -1,4 +1,4 @@
-name: Internal-Exec hyperproof retrieve
+name: internal
 
 on:
   workflow_call:
