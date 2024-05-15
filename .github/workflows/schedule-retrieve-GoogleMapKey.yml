@@ -1,0 +1,33 @@
+name: retrieve GoogleMapKey
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Hyperproof binary
+        run: |
+          curl -L -o hyperproof https://github.com/mr-chelyshkin/hyperproof/releases/download/v0.0.2/hyperproof-linux-amd64
+          chmod +x hyperproof
+      - name: GCP service account
+        env:
+          HYPERPROOF_GCP_SERVICE_ACCOUNT: ${{ secrets.HYPERPROOF_GCP_SERVICE_ACCOUNT }}
+        run: |
+          touch /tmp/gcp-service-account.json
+          echo "$HYPERPROOF_GCP_SERVICE_ACCOUNT" > /tmp/gcp-service-account.json
+      - name: Execute Hyperproof binary
+        env:
+          HYPERPROOF_AZURE_CLIENT_ID:     ${{ secrets.HYPERPROOF_AZURE_CLIENT_ID }}
+          HYPERPROOF_AZURE_CLIENT_SECRET: ${{ secrets.HYPERPROOF_AZURE_CLIENT_SECRET }}
+          HYPERPROOF_AZURE_TENANT_ID:     ${{ secrets.HYPERPROOF_AZURE_TENANT_ID }}
+          HYPERPROOF_AZURE_VAULT_NAME:    ${{ secrets.HYPERPROOF_AZURE_VAULT_NAME }}
+          HYPERPROOF_GCP_PROJECT_ID:      ${{ secrets.HYPERPROOF_GCP_PROJECT_ID }}
+        run: |
+          ./hyperproof retrieve \
+            --gcp-key-ips "127.0.0.1" \
+            --gcp-key-targets "maps.google.com" \
+            --key-name GoogleMapKey \
+            --gcp-service-account /tmp/gcp-service-account.json
