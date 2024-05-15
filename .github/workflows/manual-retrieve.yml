@@ -42,7 +42,7 @@ jobs:
           HYPERPROOF_AZURE_VAULT_NAME:    ${{ secrets.HYPERPROOF_AZURE_VAULT_NAME }}
           HYPERPROOF_GCP_PROJECT_ID:      ${{ secrets.HYPERPROOF_GCP_PROJECT_ID }}
         run: |
-          ./hyperproof \
+          ./hyperproof retrieve \
             --gcp-key-ips ${{ inputs.ip }} \
             --gcp-key-targets ${{ inputs.targets }} \
             --key-name ${{ inputs.key }} \
